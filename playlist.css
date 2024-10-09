@@ -1,0 +1,317 @@
+/* Layout Geral ----------------------------- */
+html, body, #home {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: url(../imagens/capa.png), url(../imagens/ruido.png), linear-gradient(50deg, #ff4169, #7c26f8);
+    background-attachment: fixed;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Barra de Navegação ----------------------------- */
+nav.navbar-transparente {
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #9bf0e1;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.divisor {
+    width: 1px;
+    background: white;
+    margin: 12px 15px;
+}
+
+/* Estilo dos Botões */
+.btn-success,
+.btn-detalhes,
+.btn-primary {
+    background-color: #6207e3;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.btn-success:hover,
+.btn-detalhes:hover,
+.btn-primary:hover {
+    background-color: #4e05b3;
+}
+
+.btn-success:active,
+.btn-detalhes:active,
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Cards Gerais */
+.cards-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Botões sem fundo - apenas texto */
+.btn-ver-mais {
+    margin-top: 150px;
+    padding: 0.2rem 1rem;
+    font-size: 0.875rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-ver-mais:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Estilos dos Cards */
+#playlists-destaque .row,
+#albuns .row,
+#cantores .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+#playlists-destaque .card,
+#albuns .card,
+#cantores .card,
+#cantores .card.hidden { /* Estilo aplicado também aos cards ocultos */
+    width: calc(20% - 1rem);
+    margin: 10px;
+    padding: 5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: transform 0.2s;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#playlists-destaque .card img,
+#albuns .card img,
+#cantores .card img,
+#cantores .card.hidden img { /* Estilo aplicado também aos cards ocultos */
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+#playlists-destaque .card h5,
+#albuns .card h5,
+#cantores .card h5,
+#cantores .card.hidden h5 { /* Estilo aplicado também aos cards ocultos */
+    font-size: 0.85rem;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#playlists-destaque .card p,
+#albuns .card p,
+#cantores .card p,
+#cantores .card.hidden p { /* Estilo aplicado também aos cards ocultos */
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+#playlists-destaque .card:hover,
+#albuns .card:hover,
+#cantores .card:hover,
+#cantores .card.hidden:hover { /* Estilo aplicado também aos cards ocultos */
+    transform: scale(1.05);
+}
+
+#playlists-destaque .card.hidden,
+#albuns .card.hidden,
+#cantores .card.hidden {
+    display: none; /* Apenas escondidos inicialmente */
+}
+
+.show-hidden .hidden {
+    display: flex; /* Quando visíveis, mantêm o layout */
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(20% - 1rem);
+}
+
+/* Títulos */
+h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    margin-top: 30px;
+	letter-spacing: -0.04em;
+}
+
+#albuns h2 {
+    margin-top: 160px;
+}
+
+
+/* Seção de Eventos ----------------------------- */
+#proximos-eventos {
+    margin: 1.5rem auto; /* Centraliza a seção */
+    max-width: 700px; /* Largura máxima */
+    background-color: #ffffff; /* Fundo branco */
+    padding: 1.5rem; /* Padding reduzido */
+    border-radius: 8px; /* Arredondamento suave */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.2s;
+}
+
+#proximos-eventos:hover {
+    transform: translateY(-1px); /* Levanta levemente ao passar o mouse */
+}
+
+#proximos-eventos h3 {
+    color: #7c25f8;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+    text-align: center;
+}
+
+/* Estilo dos Cartões de Eventos */
+.event-card {
+    background-color: #f8f8f8; /* Cor de fundo clara */
+    color: #333; /* Cor do texto */
+    padding: 0.8rem; /* Padding ajustado */
+    border-radius: 6px; /* Arredondamento */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    margin-bottom: 0.5rem; /* Espaçamento entre os cartões */
+    display: flex;
+    flex-direction: column; /* Coloca o conteúdo em coluna */
+    align-items: flex-start; /* Alinha à esquerda */
+    transition: transform 0.2s; /* Transição suave ao passar o mouse */
+    width: 100%; /* Cartões ocupam toda a largura disponível */
+}
+
+.event-card:hover {
+    transform: translateY(-1px); /* Levanta levemente o cartão */
+}
+
+.event-card h3 {
+    margin: 0 0 0.3rem; /* Margem reduzida */
+    font-size: 1.1rem; /* Tamanho ajustado */
+    font-weight: 500; /* Peso da fonte */
+}
+
+.event-card p {
+    margin: 0.1rem 0; /* Margem entre parágrafos */
+    color: #666; /* Cor do texto mais suave */
+    font-size: 0.8rem; /* Tamanho ajustado */
+}
+
+/* Botão "Ver Todos os Eventos" */
+.button-container {
+    text-align: center; /* Centraliza o botão */
+    margin-top: 1rem; /* Espaço acima do botão */
+}
+
+.btn-ver-todos {
+    background-color: #6207e3; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    padding: 6px 12px; /* Padding ajustado */
+    border: none; /* Remove bordas */
+    border-radius: 25px; /* Arredonda os cantos */
+    font-size: 0.9rem; /* Tamanho ajustado */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: background-color 0.3s, transform 0.2s; /* Transição suave */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+}
+
+.btn-ver-todos:hover {
+    background-color: #4e05b3; /* Cor do botão ao passar o mouse */
+    transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
+}
+
+
+
+/* Rodapé ----------------------------- */
+footer {
+    background: #000;
+    padding: 50px 0px 20px 0px;
+    position: relative;
+    margin-top: 100px;
+}
+
+footer h4 {
+    color: #919496;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+footer .navbar-nav a {
+    color: white;
+    font-size: 0.8em;
+}
+
+footer .navbar-nav a:hover {
+    color: #9bf0e1;
+    text-decoration: none;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    float: right;
+    margin: 0 5px;
+}
+
+/* Tipografia ----------------------------- */
+h1 {
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin-bottom: 50px;
+    color: white;
+}
+
+h2 {
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+h3 {
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
